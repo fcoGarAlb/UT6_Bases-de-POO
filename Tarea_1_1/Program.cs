@@ -1,4 +1,5 @@
-﻿using System;
+﻿// EL primer ejercicio de clase
+using System;
 
 namespace Tarea_1_1
 {
