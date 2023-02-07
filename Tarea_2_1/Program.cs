@@ -16,12 +16,12 @@ namespace Tarea_2_1
     {
         static void Main(string[] args)
         {
-            string texto = "La noche se avecina, ahora empieza mi guardia.No terminará hasta el día de mi " +
-                           "muerte. No tomaré esposa, no poseeré tierras, no engendraré hijos.No llevaré " + 
+            string texto = "La noche se avecina, ahora empieza mi guardia. No terminará hasta el día de mi " +
+                           "muerte. No tomaré esposa, no poseeré tierras, no engendraré hijos. No llevaré " + 
                            "corona, no alcanzaré la gloria. Viviré y moriré en mi puesto. Soy la espada en la " +
                            "oscuridad. Soy el vigilante del Muro. Soy el fuego que arde contra el frío, la luz que " +
                            "trae el amanecer, el cuerno que despierta a los durmientes, el escudo que defiende " +
-                           "los reinos de los hombres.Entrego mi vida y mi honor a la Guardia de la Noche, " +
+                           "los reinos de los hombres. Entrego mi vida y mi honor a la Guardia de la Noche, " +
                            "durante esta noche y todas las que estén por venir. ";
 
             int consonates, vocales_a, vocales_e, vocales_i, vocales_o, vocales_u;
