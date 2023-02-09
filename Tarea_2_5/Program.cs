@@ -8,6 +8,8 @@ namespace Tarea_2_5
         {
             DateTime hoy = DateTime.Now;
             DateTime fechaNacimiento;
+            TimeSpan diferencia;
+
             int anyo, mes, dia;
 
             Console.Write("Dime tu año de nacimiento: ");
@@ -20,9 +22,9 @@ namespace Tarea_2_5
             dia = int.Parse(Console.ReadLine());
 
             fechaNacimiento = new DateTime(anyo, mes, dia);
-            TimeSpan diferencia = hoy.Subtract(fechaNacimiento);
+            diferencia = hoy.Subtract(fechaNacimiento);
 
-            Console.WriteLine($"\nTienes {Math.Truncate((diferencia.TotalDays / 365f))} años");
+            Console.WriteLine($"\nTienes {Math.Truncate((diferencia.TotalDays / 365))} años");
 
 
         }
