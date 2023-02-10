@@ -28,6 +28,7 @@ namespace Tarea_2_1
             consonates = vocales_a = vocales_e = vocales_i = vocales_o = vocales_u = 0;
             char caracterMin;
 
+            
             foreach (char caracter in texto)
             {
                 caracterMin = char.ToLower(caracter);

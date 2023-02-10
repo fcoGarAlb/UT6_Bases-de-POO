@@ -28,25 +28,40 @@ namespace Tarea_2_2
                            "trae el amanecer, el cuerno que despierta a los durmientes, el escudo que defiende " +
                            "los reinos de los hombres. Entrego mi vida y mi honor a la Guardia de la Noche, " +
                            "durante esta noche y todas las que estén por venir. ";
+
             
-            //string textoMin = texto.ToLower();
 
             string cadenaBuscar;
+            int longitud;
             bool coincidencia;
-            int ocurrencias;
+            int ocurrencias = 0;
 
             Console.WriteLine(texto + "\n");
             Console.WriteLine("Dime una frase a buscar: ");
             cadenaBuscar = (Console.ReadLine()).Trim(' ');
             Console.WriteLine("¿Quieres una coincidencia exacta (S/N)? ");
             coincidencia = Char.ToUpper(Char.Parse(Console.ReadLine())) == 'S';
+            
+
 
             if (coincidencia)
-                ocurrencias = Regex.Matches(texto, cadenaBuscar).Count;            
+            {
+                for (int i = 0; i < (texto.Length - cadenaBuscar.Length); i++)
+                    if (cadenaBuscar == texto.Substring(i, cadenaBuscar.Length)) ocurrencias++;
+            }
             else
-                ocurrencias = Regex.Matches(texto.ToLower(), cadenaBuscar.ToLower()).Count; 
+            {
+                string cadenaBuscarMin = cadenaBuscar.ToLower();
+                string textoMin = texto.ToLower();
 
-            Console.WriteLine($"El número de ocurrencias{((coincidencia)? " exactas " : " ")}para '{cadenaBuscar}' es {ocurrencias}");
+                for (int i = 0; i < (texto.Length - cadenaBuscar.Length); i++)
+                    if (cadenaBuscarMin == textoMin.Substring(i, cadenaBuscar.Length)) ocurrencias++;
+            }
+
+
+            Console.WriteLine($"El número de ocurrencias{((coincidencia) ? " exactas " : " ")}para '{cadenaBuscar}' es {ocurrencias}");
         }
     }
 }
+
+
