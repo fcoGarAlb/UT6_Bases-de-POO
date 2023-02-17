@@ -25,26 +25,29 @@ namespace Tarea_3_7
 
             int diaSemana = (int) fecha.DayOfWeek;
             int numDiasMes = DateTime.DaysInMonth(fecha.Year, fecha.Month);
-            int cont = 1;
+           
 
-            for (int s = 0; s < mes.GetLength(0) && cont <= numDiasMes; s++)
+            Console.WriteLine("Lu ma mi ju vi sá do");
+            StringBuilder calendario = new StringBuilder();
+
+            int cont = 0; 
+
+            for ( int i = 0; i < diaSemana; i++)
             {
-                for (int d = 0; d < mes.GetLength(1) && cont <= numDiasMes; d++)
-                {
-                    mes[s, d] = cont++;
-                }
+                calendario.Append("   ");
+                cont++;
             }
 
-            cont = 1;
-            Console.WriteLine((MesesAnyo) fecha.Month + " " + fecha.Year);
-            for (int s = 0; s < mes.GetLength(0) && cont <= numDiasMes; s++)
+            for (int i = 0; i < numDiasMes; i++  )
             {
-                for (int d = 0; d < mes.GetLength(1) && cont <= numDiasMes; d++)
-                {
-                    Console.Write( mes[s, d] + " ");
-                }
-                Console.WriteLine();
+                if ((diaSemana + i) % 7 != 0)
+                    calendario.Append($"{i + 1} ");
+                else
+                    calendario.Append($"{i + 1} \n");
             }
+
+            Console.Write(calendario.ToString());
+            
         }
     }
 }
