@@ -14,40 +14,35 @@ namespace Tarea_3_7
         public enum MesesAnyo { Enero = 1, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre };
         static void Main(string[] args)
         {
-            DateTime hoy = DateTime.Today;
+            // DateTime hoy = DateTime.Today;
+            DateTime hoy = new DateTime(2023, 2, 3);
 
             ImprimeMesFecha(hoy);
         }
 
         static void ImprimeMesFecha(DateTime fecha)
         {
-            int[,] mes = new int[5, 7];
-
-            int diaSemana = (int) fecha.DayOfWeek;
+            DateTime primerDiaMes = new DateTime(fecha.Year, fecha.Month, 1);
+            int diaSemana = (int) primerDiaMes.DayOfWeek;
             int numDiasMes = DateTime.DaysInMonth(fecha.Year, fecha.Month);
-           
-
-            Console.WriteLine("Lu ma mi ju vi sá do");
+                                   
             StringBuilder calendario = new StringBuilder();
 
-            int cont = 0; 
+            if (diaSemana == 0) diaSemana = 7;
+            int hueco = diaSemana - 1;
 
-            for ( int i = 0; i < diaSemana; i++)
-            {
-                calendario.Append("   ");
-                cont++;
-            }
-
-            for (int i = 0; i < numDiasMes; i++  )
-            {
-                if ((diaSemana + i) % 7 != 0)
-                    calendario.Append($"{i + 1} ");
-                else
-                    calendario.Append($"{i + 1} \n");
-            }
-
-            Console.Write(calendario.ToString());
+            calendario.Append((MesesAnyo) fecha.Month + " " + fecha.Year + "\n\nLu ma mi ju vi sá do\n");
+            calendario.Insert(calendario.Length, "   ", hueco);
             
+            for (int i = 0; i < numDiasMes; i++)
+            {
+                if ((diaSemana + i) % 7 == 0)
+                    calendario.Append((i + 1).ToString("D2") + " \n");
+                else
+                    calendario.Append((i + 1).ToString("D2") + " ");
+            }
+            
+            Console.WriteLine(calendario.ToString() + "\n");          
         }
     }
 }
