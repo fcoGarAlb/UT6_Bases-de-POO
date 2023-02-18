@@ -15,22 +15,22 @@ namespace Tarea_4_1
         static void Main(string[] args)
         {
             bool ok = false;
-            string[] digito;
-            int d1 = 0, d2 = 0, d3 = 0, d4 = 0;
+            string[] bytes;
+            int b0 = 0, b1 = 0, b2 = 0, b3 = 0;
 
             do
             {
                 Console.WriteLine("Dame una dirección IP: ");
-                digito = Console.ReadLine().Split('.');
+                bytes = Console.ReadLine().Split('.');
 
-                if (digito.GetLength(0) == 4 && int.TryParse(digito[0], out d1)
-                                             && int.TryParse(digito[1], out d2)
-                                             && int.TryParse(digito[2], out d3)
-                                             && int.TryParse(digito[3], out d4)
-                                             && d1 >= 0 && d1 <= 255
-                                             && d2 >= 0 && d2 <= 255
-                                             && d3 >= 0 && d3 <= 255
-                                             && d4 >= 0 && d4 <= 255)
+                if (bytes.GetLength(0) == 4 && int.TryParse(bytes[0], out b3)
+                                             && int.TryParse(bytes[1], out b2)
+                                             && int.TryParse(bytes[2], out b1)
+                                             && int.TryParse(bytes[3], out b0)
+                                             && b3 >= 0 && b3 <= 255
+                                             && b2 >= 0 && b2 <= 255
+                                             && b1 >= 0 && b1 <= 255
+                                             && b0 >= 0 && b0 <= 255)
                 {
                     ok = true;
                     Console.WriteLine("La direccion es válida en formato...\n");
@@ -40,7 +40,7 @@ namespace Tarea_4_1
 
             } while (!ok);
 
-            Console.WriteLine("Has escrito: " + d1.ToString() + "." + d2.ToString() + "." + d3.ToString() + "." + d4.ToString());
+            Console.WriteLine("Has escrito: " + b3.ToString() + "." + b2.ToString() + "." + b1.ToString() + "." + b0.ToString());
             
         }
     }
