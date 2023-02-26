@@ -13,7 +13,7 @@ namespace Tarea_5_4
 
         public Zombie()
         {
-            estado = 0;
+            estado = Estado.descansando;
         }
 
         public void cambiaEstado()
