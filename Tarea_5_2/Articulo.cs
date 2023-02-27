@@ -16,6 +16,7 @@ namespace Tarea_5_2
     class Articulo
     {
         private static int numeracion;
+        private int numero;
         private string nombre;
         private float precio;
         int iva;
@@ -25,11 +26,11 @@ namespace Tarea_5_2
         {
             if (esValidoArticulo(nombre, precio, iva, stock))
             {
-                numeracion++;
-                this.nombre = nombre;
-                this.precio = precio;
-                this.iva = iva;
-                this.stock = stock;
+                this.numero = ++numeracion;
+                Nombre = nombre;
+                Precio = precio;
+                Iva = iva;
+                Stock = stock;
             }
             else
             {
@@ -38,12 +39,30 @@ namespace Tarea_5_2
 
         }
 
-        //public Articulo(string nombre, float precio, int stock) => Articulo(nombre, precio, 21, stock);
+        public Articulo(string nombre, float precio, int stock)
+        {
+            int iva = 21;
 
+            if (esValidoArticulo(nombre, precio, iva, stock))
+            {
+                this.numero = ++numeracion;
+                Nombre = nombre;
+                Precio = precio;
+                Iva = iva;
+                Stock = stock;
+            }
+            else
+            {
+                Console.WriteLine("Los datos introducidos no son validos");
+            }
+        }
+
+        public int Numero { get => numero; }
         public string Nombre { get => nombre; set => nombre = value; }
         public float Precio { get => precio; set => precio = value; }
         public int Iva { get => iva; set => iva = value; }
         public int Stock { get => stock; set => stock = value; }
+        
 
         public override string ToString()
         {

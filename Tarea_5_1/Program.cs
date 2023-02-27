@@ -31,14 +31,14 @@ namespace Tarea_5_1
             }
             else
             {
-                Persona unaPersona = new Persona(dni, nombre, apellidos, edad);
+                var unaPersona = new Persona(dni, nombre, apellidos, edad);
                 Console.WriteLine("Datos introducidos\n" + unaPersona.ToString());
                 Console.WriteLine((unaPersona.esMayorEdad())? "Mayor de edad": "Menor de edad");
                 Console.WriteLine((unaPersona.esJubilado()) ? "Jubilado" : "No jubilado");
                 Console.WriteLine();
 
 
-                Persona otraPersona = new Persona();
+                var otraPersona = new Persona();
            
                 otraPersona.Dni = "12345678H";
                 otraPersona.Nombre = "otraPersona";
@@ -49,9 +49,12 @@ namespace Tarea_5_1
                 Console.WriteLine((otraPersona.esJubilado()) ? "Jubilado" : "No jubilado");
                 Console.WriteLine();
 
-                Console.WriteLine(unaPersona.diferenciaEdad(otraPersona));
+                Console.WriteLine("Diferencia de edad entre tu y la otra persona: " + unaPersona.diferenciaEdad(otraPersona));
+
+              
                 Console.WriteLine($"Comparamos las dos personas: {((unaPersona.Equals(otraPersona))? "Son la misma persona" : "Son personas distintas")}");
                 Console.WriteLine($"Comparamos los datos introducidos consigo mismo: {((unaPersona.Equals(unaPersona)) ? "Son la misma persona" : "Son personas distintas")}");
+                
             }
 
         }

@@ -8,8 +8,6 @@ namespace Tarea_5_1
 {
     class Persona
     {
-        static char[] letrasDNI = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E' };
-
         private string dni;
         private string nombre;
         private string apellidos;
@@ -25,10 +23,10 @@ namespace Tarea_5_1
 
         public Persona(string dni, string nombre, string apellidos, int edad)
         {
-            this.dni = dni;
-            this.nombre = nombre;
-            this.apellidos = apellidos;
-            this.edad = edad;
+            Dni = dni;
+            Nombre = nombre;
+            Apellidos = apellidos;
+            Edad = edad;
         }
 
         public string Dni { get => dni; set => dni = value; }
@@ -71,6 +69,7 @@ namespace Tarea_5_1
 
         public static bool validarDNI(string dni)
         {
+            char[] letrasDNI = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E' };
             bool ok = false;
             int numero;
             char letraDNI;

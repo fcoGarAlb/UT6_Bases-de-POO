@@ -15,7 +15,7 @@ namespace Tarea_3_7
         static void Main(string[] args)
         {
             // DateTime hoy = DateTime.Today;
-            DateTime hoy = new DateTime(2023, 2, 3);
+            DateTime hoy = new DateTime(2023, 3, 3);
 
             ImprimeMesFecha(hoy);
         }
