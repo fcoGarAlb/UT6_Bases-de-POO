@@ -50,7 +50,15 @@ namespace Tarea_5_1
                 Persona p = (Persona)obj;
                 return dni == p.dni && nombre == p.nombre && apellidos == p.apellidos && edad == p.edad;
             }
-        }
+        } 
+
+        /*public override bool Equals(object obj)
+        {
+            return obj is Persona persona &&
+                   nombre == persona.nombre &&
+                   apellidos == persona.apellidos &&
+                   edad == persona.edad;
+        }*/
 
         public bool esMayorEdad()
         {
@@ -64,7 +72,7 @@ namespace Tarea_5_1
 
         public int diferenciaEdad(Persona p)
         {
-            return this.edad - p.edad;
+            return Math.Abs(this.edad - p.Edad);
         }
 
         public static bool validarDNI(string dni)
